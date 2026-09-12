@@ -28,7 +28,7 @@ When the installer finishes it opens a short setup that asks for your driving
 school's web address, opens a browser so you can sign in, and offers to send
 alerts to your phone. About five minutes.
 
-**Stuck?** The full walkthrough is in **[INSTRUCTIONS.md](INSTRUCTIONS.md)**, and
+**Stuck?** The full walkthrough is in **[INSTRUCTIONS.md](docs/INSTRUCTIONS.md)**, and
 you can [ask me here](../../issues/new/choose).
 
 <br>
@@ -127,15 +127,15 @@ need a free GitHub account to post one; if you'd rather not, just send it to me
 directly.
 
 **Never post your password or `state\storage.json`** — that file is a live
-sign-in to your account. See [SUPPORT.md](SUPPORT.md).
+sign-in to your account. See [SUPPORT.md](docs/SUPPORT.md).
 
 ## For the curious
 
-[TECHNICAL-NOTES.md](TECHNICAL-NOTES.md) covers how detection works and the
+[TECHNICAL-NOTES.md](docs/TECHNICAL-NOTES.md) covers how detection works and the
 failure modes found building it against a live site — including several where it
 looked like it was working and wasn't.
 
-Run the tests with `powershell -ExecutionPolicy Bypass -File tests\Run-SelfTest.ps1`.
+Run the tests with `powershell -ExecutionPolicy Bypass -File app\tests\Run-SelfTest.ps1`.
 44 checks against a local fake page, sandboxed so they can't touch your real
 config or sign-in.
 

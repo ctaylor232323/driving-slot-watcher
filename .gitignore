@@ -1,13 +1,13 @@
 # Personal data -- must never be committed.
-config.json
-state/
-logs/
-snapshots/
-profile/
+app/config.json
+app/state/
+app/logs/
+app/snapshots/
+app/profile/
 
 # Installed at setup time.
-node_modules/
-package-lock.json
+app/node_modules/
+app/package-lock.json
 
 # Windows noise.
 Thumbs.db

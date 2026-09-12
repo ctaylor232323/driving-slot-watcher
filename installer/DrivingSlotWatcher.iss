@@ -56,34 +56,34 @@ Name: "desktopicon"; Description: "Put a shortcut on my Desktop"; GroupDescripti
 
 [Files]
 ; The launchers people actually double-click.
-Source: "..\CHECK-NOW.cmd";           DestDir: "{app}"; Flags: ignoreversion
-Source: "..\STATUS.cmd";              DestDir: "{app}"; Flags: ignoreversion
-Source: "..\RE-SIGN-IN.cmd";          DestDir: "{app}"; Flags: ignoreversion
-Source: "..\TEST-ALERT.cmd";          DestDir: "{app}"; Flags: ignoreversion
-Source: "..\SET-UP-PHONE-ALERTS.cmd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\CHECK-NOW.cmd";           DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\STATUS.cmd";              DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\RE-SIGN-IN.cmd";          DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\TEST-ALERT.cmd";          DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\SET-UP-PHONE-ALERTS.cmd"; DestDir: "{app}"; Flags: ignoreversion
 
 ; The program itself.
-Source: "..\Install.ps1";             DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Uninstall.ps1";           DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Check-Slots.ps1";         DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Setup-Login.ps1";         DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Show-Status.ps1";         DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Install-Task.ps1";        DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Uninstall-Task.ps1";      DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Set-PushAlerts.ps1";      DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Set-TextAlerts.ps1";      DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Set-EmailPassword.ps1";   DestDir: "{app}"; Flags: ignoreversion
-Source: "..\check-slots.js";          DestDir: "{app}"; Flags: ignoreversion
-Source: "..\login.js";                DestDir: "{app}"; Flags: ignoreversion
-Source: "..\open-page.js";            DestDir: "{app}"; Flags: ignoreversion
-Source: "..\test-detect.js";          DestDir: "{app}"; Flags: ignoreversion
-Source: "..\package.json";            DestDir: "{app}"; Flags: ignoreversion
-Source: "..\config.template.json";    DestDir: "{app}"; Flags: ignoreversion
-Source: "..\lib\*";                   DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs
+Source: "..\app\Install.ps1";             DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\Uninstall.ps1";           DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\Check-Slots.ps1";         DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\Setup-Login.ps1";         DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\Show-Status.ps1";         DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\Install-Task.ps1";        DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\Uninstall-Task.ps1";      DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\Set-PushAlerts.ps1";      DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\Set-TextAlerts.ps1";      DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\Set-EmailPassword.ps1";   DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\check-slots.js";          DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\login.js";                DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\open-page.js";            DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\test-detect.js";          DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\package.json";            DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\config.template.json";    DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\lib\*";                   DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs
 
 ; Docs worth having locally.
-Source: "..\INSTRUCTIONS.md";         DestDir: "{app}"; Flags: ignoreversion
-Source: "..\SUPPORT.md";              DestDir: "{app}"; Flags: ignoreversion
+Source: "..\docs\INSTRUCTIONS.md";         DestDir: "{app}"; Flags: ignoreversion
+Source: "..\docs\SUPPORT.md";              DestDir: "{app}"; Flags: ignoreversion
 Source: "..\LICENSE";                 DestDir: "{app}"; Flags: ignoreversion
 
 [INI]
