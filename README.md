@@ -97,7 +97,7 @@ After installing, the folder has these — just double-click them:
 
 ## The two things people get wrong
 
-**Tick "Remember me" when you sign in.** Without it the site logs you out after
+**Check "Remember me" when you sign in.** Without it the site logs you out after
 a few hours and you'll be redoing setup constantly.
 
 **Leave the browser on "Schedule My Drive"**, not "My Schedule". The first lists

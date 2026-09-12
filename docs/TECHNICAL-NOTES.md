@@ -360,7 +360,7 @@ The login page ignores `returnUrl` and carries no return-url field, so it cannot
 hand you off to the scheduling page automatically. Alerts therefore include the
 two taps you need: **sign in, then Scheduling > Schedule My Drive**.
 
-Tick **"Remember me"** when you sign in on your phone. It keeps the session
+Check **"Remember me"** when you sign in on your phone. It keeps the session
 alive so later alerts are a shorter trip.
 
 Override the link with `alerts.clickUrl` if you ever want it pointed elsewhere.

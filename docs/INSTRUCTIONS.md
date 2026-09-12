@@ -29,7 +29,7 @@ You do **not** need to be technical, and you don't need administrator rights.
 ## Installing
 
 1. **Unblock the zip first.** Right-click the zip file, choose *Properties*,
-   and if you see an **Unblock** checkbox near the bottom, tick it and click OK.
+   and if you see an **Unblock** checkbox near the bottom, check it and click OK.
    Windows adds that mark to anything downloaded, and unblocking once here saves
    you several warnings later. If there's no checkbox, nothing to do.
 
@@ -53,7 +53,7 @@ You do **not** need to be technical, and you don't need administrator rights.
 
 ### The two steps people get wrong
 
-**Tick "Remember me" when you sign in.** Without it the site signs you out after
+**Check "Remember me" when you sign in.** Without it the site signs you out after
 a few hours and you'll have to sign in again. With it, you'll go days or weeks.
 
 **Leave the browser on the page that lists *bookable openings*.** On this system
@@ -151,7 +151,7 @@ healthy, and the last few log lines.
 
 | What you see | What to do |
 |---|---|
-| "needs a fresh login" | Run `RE-SIGN-IN.cmd`, tick "Remember me" |
+| "needs a fresh login" | Run `RE-SIGN-IN.cmd`, check "Remember me" |
 | Alerts stopped arriving | Run `TEST-ALERT.cmd` |
 | "page changed" messages | Probably watching "My Schedule" instead of "Schedule My Drive" — run `RE-SIGN-IN.cmd` and pick the right page |
 | No morning message | Check the PC was on and signed in; then `STATUS.cmd` |

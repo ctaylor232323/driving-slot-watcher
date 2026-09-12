@@ -162,7 +162,7 @@ switch ($Stage) {
 
         # Generated here, not in the installer's scripting language, which has
         # no cryptographic RNG. This name is the only thing protecting someone's
-        # alerts, so it needs real entropy rather than a tick-count seed.
+        # alerts, so it needs real entropy rather than a check-count seed.
         $NtfyTopic = ''
         if ($WantPush) {
             $chars = 'abcdefghijkmnopqrstuvwxyz23456789'

@@ -341,7 +341,7 @@ switch ($status) {
         if ($Force -or ($newSituation -and ($minutesSinceAlert -ge $cooldownMin))) {
             $shouldAlert = $true
             $title = 'Scheduling page changed -- worth a look'
-            $body = "The `"No Available Open Slots`" message is gone, but no lesson date or time was recognised.`r`n`r`n$reason"
+            $body = "The `"No Available Open Slots`" message is gone, but no lesson date or time was recognized.`r`n`r`n$reason"
         }
         else {
             Log 'Page-changed state already reported; staying quiet.'

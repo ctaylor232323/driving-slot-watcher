@@ -246,7 +246,7 @@ Write-Host '  A browser window is about to open at your school''s login page.'
 Write-Host ''
 Write-Host '  In that window:'
 Write-Host '    1. Sign in as usual.'
-Write-Host '    2. TICK "Remember me" if you see it. This keeps the watcher'
+Write-Host '    2. CHECK "Remember me" if you see it. This keeps the watcher'
 Write-Host '       signed in far longer, and saves you repeating this.' -ForegroundColor Yellow
 Write-Host '    3. Go to the page that lists BOOKABLE openings.'
 Write-Host '       On most of these sites that is Scheduling > Schedule My Drive.'
@@ -286,12 +286,12 @@ switch ($state.status) {
     }
     'login_required' {
         Write-Problem 'It could not stay signed in.'
-        Write-Host '  Run INSTALL.cmd again and tick "Remember me" when you sign in.' -ForegroundColor Yellow
+        Write-Host '  Run INSTALL.cmd again and check "Remember me" when you sign in.' -ForegroundColor Yellow
         Read-Host '  Press Enter to close'
         exit 1
     }
     default {
-        Write-Host '  It read a page, but not one it recognises.' -ForegroundColor Yellow
+        Write-Host '  It read a page, but not one it recognizes.' -ForegroundColor Yellow
         Write-Host ''
         Write-Host '  This usually means the browser was left on the wrong page --'
         Write-Host '  "My Schedule" instead of "Schedule My Drive".'

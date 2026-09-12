@@ -12,7 +12,7 @@
 
 #define AppName       "Driving Lesson Slot Watcher"
 #define AppShortName  "DrivingSlotWatcher"
-#define AppVersion    "1.1.0"
+#define AppVersion    "1.2.0"
 #define AppPublisher  "Chris Taylor"
 #define AppURL        "https://github.com/ctaylor232323/driving-slot-watcher"
 
@@ -42,8 +42,6 @@ SolidCompression=yes
 WizardStyle=modern
 SetupLogging=yes
 
-LicenseFile=..\LICENSE
-InfoBeforeFile=welcome.txt
 
 UninstallDisplayName={#AppName}
 UninstallDisplayIcon={sys}\WindowsPowerShell\v1.0\powershell.exe

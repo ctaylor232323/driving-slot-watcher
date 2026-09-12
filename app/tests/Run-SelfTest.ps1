@@ -166,8 +166,8 @@ try {
     . (Join-Path $Root 'lib\Notify.ps1')
 
     $split = Split-AlertRecipients -To 'dad@example.com, 6145550100@vzwpix.com; mom@example.org,6145550101@tmomail.net'
-    Assert-Equal 'two mailboxes recognised' 2 $split.Email.Count
-    Assert-Equal 'two phone gateways recognised' 2 $split.Sms.Count
+    Assert-Equal 'two mailboxes recognized' 2 $split.Email.Count
+    Assert-Equal 'two phone gateways recognized' 2 $split.Sms.Count
     Assert-Equal 'a plain address is not treated as a phone' $false (Test-IsSmsAddress 'dad@example.com')
     Assert-Equal 'a gateway address is treated as a phone' $true (Test-IsSmsAddress '6145550100@txt.att.net')
 

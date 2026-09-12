@@ -43,6 +43,6 @@ if (verdict.slots.length) {
     console.log('  - ' + s.text);
   }
 } else {
-  console.log('No date/time lines recognised.');
+  console.log('No date/time lines recognized.');
 }
 console.log('');

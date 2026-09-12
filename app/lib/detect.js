@@ -161,7 +161,7 @@ function decide(opts) {
   return {
     status: 'page_changed',
     reason:
-      'The "no slots" message is gone but no date/time was recognised. Worth a look -- check the snapshot.',
+      'The "no slots" message is gone but no date/time was recognized. Worth a look -- check the snapshot.',
     matchedPhrase: null,
     slots,
   };

@@ -81,7 +81,12 @@ async function main() {
     console.error('Could not save the session: ' + e.message);
   }
 
-  fs.writeFileSync(CAPTURED_PATH, capturedUrl, 'utf8');
+  // Only write this when we actually got a page. The wizard treats its
+  // absence as "the browser was closed too early" and offers to retry, which
+  // it cannot do if we leave an empty file behind.
+  if (capturedUrl) {
+    fs.writeFileSync(CAPTURED_PATH, capturedUrl, 'utf8');
+  }
   await context.close().catch(() => {});
 
   if (!signalled && !capturedUrl) {
