@@ -12,3 +12,6 @@ package-lock.json
 # Windows noise.
 Thumbs.db
 desktop.ini
+
+# Built installer - shipped as a Release asset, not committed.
+dist/
