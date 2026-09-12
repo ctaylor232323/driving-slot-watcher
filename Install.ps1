@@ -321,11 +321,29 @@ Write-Host '   * Every morning around 8am you get a quiet "still working"'
 Write-Host '     message. If that message ever stops arriving, something is'
 Write-Host '     wrong -- that silence is the warning.'
 Write-Host ''
-Write-Host '  Shortcuts in this folder:'
+Write-Host '  Shortcuts in this folder, and in your Start Menu:'
 Write-Host '    CHECK-NOW.cmd             check immediately, do not wait'
 Write-Host '    STATUS.cmd                is it working? what did it last see?'
 Write-Host '    RE-SIGN-IN.cmd            when it says it needs a fresh login'
 Write-Host '    SET-UP-PHONE-ALERTS.cmd   add or change phone alerts'
 Write-Host '    UNINSTALL.cmd             stop and remove it completely'
+Write-Host ''
+Write-Host '  ' + ('-' * 62) -ForegroundColor DarkGray
+Write-Host ''
+Write-Host '  This is free, and stays free. If it saves you a scramble and you' -ForegroundColor Cyan
+Write-Host '  feel like buying the author a coffee, the page is here:' -ForegroundColor Cyan
+Write-Host ''
+Write-Host '      https://buymeacoffee.com/ctaylor23' -ForegroundColor White
+Write-Host ''
+Write-Host '  Entirely optional -- nothing is held back if you do not, and there'
+Write-Host '  is a Start Menu shortcut for it if you would rather do it later.'
+Write-Host ''
+
+$coffee = Read-Host '  Open that page in your browser now? (y/N)'
+if ($coffee -match '^(y|yes)$') {
+    Start-Process 'https://buymeacoffee.com/ctaylor23' | Out-Null
+    Write-Host '  Opened. Thank you.' -ForegroundColor Green
+}
+
 Write-Host ''
 Read-Host '  Press Enter to close'

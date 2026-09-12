@@ -12,7 +12,7 @@
 
 #define AppName       "Driving Lesson Slot Watcher"
 #define AppShortName  "DrivingSlotWatcher"
-#define AppVersion    "1.0.0"
+#define AppVersion    "1.0.1"
 #define AppPublisher  "Chris Taylor"
 #define AppURL        "https://github.com/ctaylor232323/driving-slot-watcher"
 
@@ -86,6 +86,12 @@ Source: "..\INSTRUCTIONS.md";         DestDir: "{app}"; Flags: ignoreversion
 Source: "..\SUPPORT.md";              DestDir: "{app}"; Flags: ignoreversion
 Source: "..\LICENSE";                 DestDir: "{app}"; Flags: ignoreversion
 
+[INI]
+; A real internet shortcut, so "buy the author a coffee" is something you can
+; click from the Start Menu later rather than text you have to retype.
+Filename: "{app}\Buy the author a coffee.url"; Section: "InternetShortcut"; \
+  Key: "URL"; String: "https://buymeacoffee.com/ctaylor23"
+
 [Icons]
 Name: "{group}\Set up the watcher";      Filename: "{sys}\WindowsPowerShell\v1.0\powershell.exe"; Parameters: "-NoProfile -ExecutionPolicy Bypass -File ""{app}\Install.ps1"""; WorkingDir: "{app}"
 Name: "{group}\Check for openings now";  Filename: "{app}\CHECK-NOW.cmd";  WorkingDir: "{app}"
@@ -93,6 +99,7 @@ Name: "{group}\Is it working?";          Filename: "{app}\STATUS.cmd";     Worki
 Name: "{group}\Sign in again";           Filename: "{app}\RE-SIGN-IN.cmd"; WorkingDir: "{app}"
 Name: "{group}\Test my alerts";          Filename: "{app}\TEST-ALERT.cmd"; WorkingDir: "{app}"
 Name: "{group}\Instructions";            Filename: "{app}\INSTRUCTIONS.md"; WorkingDir: "{app}"
+Name: "{group}\Buy the author a coffee"; Filename: "{app}\Buy the author a coffee.url"
 Name: "{group}\Uninstall";               Filename: "{uninstallexe}"
 
 Name: "{autodesktop}\Driving Slot Watcher - Status"; Filename: "{app}\STATUS.cmd"; WorkingDir: "{app}"; Tasks: desktopicon
@@ -107,6 +114,12 @@ Filename: "{sys}\WindowsPowerShell\v1.0\powershell.exe"; \
   WorkingDir: "{app}"; \
   Description: "Set it up now (recommended)"; \
   Flags: postinstall nowait skipifsilent
+
+; Offered, not pushed: unchecked by default, so nobody donates by accident
+; through habitually clicking Next.
+Filename: "https://buymeacoffee.com/ctaylor23"; \
+  Description: "This was free - buy the author a coffee (optional)"; \
+  Flags: postinstall shellexec nowait skipifsilent unchecked
 
 [UninstallRun]
 ; Stop the scheduled task and delete the saved sign-in before the files go.
@@ -123,6 +136,7 @@ Type: filesandordirs; Name: "{app}\logs"
 Type: filesandordirs; Name: "{app}\snapshots"
 Type: filesandordirs; Name: "{app}\profile"
 Type: filesandordirs; Name: "{app}\node_modules"
+Type: files;          Name: "{app}\Buy the author a coffee.url"
 Type: files;          Name: "{app}\config.json"
 Type: files;          Name: "{app}\package-lock.json"
 Type: dirifempty;     Name: "{app}"
