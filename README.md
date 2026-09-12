@@ -116,9 +116,14 @@ sign-in to your account. See [SUPPORT.md](SUPPORT.md).
 This is free and always will be. If it got your kid their hours faster, that's
 payment enough.
 
-A few people have asked about chipping in toward the time it took to build. If
-you'd like to, get in touch and I'll point you at a link — and if you'd rather
-not, genuinely, don't give it another thought.
+A few people asked about chipping in toward the time it took to build, so
+there's a link if you want it:
+
+**[buymeacoffee.com/ctaylor23](https://buymeacoffee.com/ctaylor23)**
+
+Entirely optional, and it changes nothing about the tool either way — no
+features behind it, no nagging, no difference in support if you don't. If
+you'd rather not, genuinely, don't give it another thought.
 
 ---
 
