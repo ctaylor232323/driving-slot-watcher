@@ -1,0 +1,14 @@
+# Personal data -- must never be committed.
+config.json
+state/
+logs/
+snapshots/
+profile/
+
+# Installed at setup time.
+node_modules/
+package-lock.json
+
+# Windows noise.
+Thumbs.db
+desktop.ini

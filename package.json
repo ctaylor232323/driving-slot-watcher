@@ -1,0 +1,17 @@
+{
+  "name": "driving-slot-watcher",
+  "version": "1.0.0",
+  "description": "Watches a driving school's scheduling page and alerts when a lesson opens.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "playwright": "^1.62.1"
+  },
+  "private": true
+}

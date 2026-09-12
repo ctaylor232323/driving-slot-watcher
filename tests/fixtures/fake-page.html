@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Fake BTW Scheduling</title></head>
+<body>
+  <h1>the driving school</h1>
+  <p>Student Portal | Welcome, Emma</p>
+  <h2>Behind The Wheel Scheduling</h2>
+  <div id="board">Loading scheduling calendar...</div>
+  <p>Last updated <span id="clock"></span></p>
+
+  <script>
+    // Renders late and on a timer, the way the real page does, so the
+    // monitor's settle/wait logic gets exercised.
+    var mode = new URLSearchParams(location.search).get('mode') || 'none';
+
+    document.getElementById('clock').textContent =
+      new Date().toLocaleTimeString('en-US');
+
+    setTimeout(function () {
+      var board = document.getElementById('board');
+      if (mode === 'open') {
+        board.innerHTML =
+          '<table>' +
+          '<tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th></tr>' +
+          '</table>' +
+          '<div class="slot">Thu 09/11/2026 4:00 PM - 6:00 PM Instructor: R. Hall ' +
+          '<button class="reserve">Reserve</button></div>' +
+          '<div class="slot">Sat 09/13/2026 9:00 AM - 11:00 AM Instructor: T. Nguyen ' +
+          '<button class="reserve">Reserve</button></div>';
+      } else if (mode === 'oops') {
+        document.body.innerHTML =
+          '<p>Oops! Something went wrong.</p>' +
+          '<p>Please try again. If the error persists, please take a screenshot ' +
+          'of this page and send to the administrator.</p>';
+      } else if (mode === 'weird') {
+        board.innerHTML =
+          '<p>Scheduling is temporarily closed while the office updates the calendar.</p>';
+      } else {
+        board.innerHTML =
+          '<p>No Available Open Slots</p>' +
+          '<p>New lessons are added periodically. Please check back.</p>';
+      }
+    }, 1200);
+  </script>
+</body>
+</html>

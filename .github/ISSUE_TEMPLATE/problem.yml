@@ -1,0 +1,50 @@
+name: Something isn't working
+description: The watcher isn't alerting, or is alerting when it shouldn't
+title: "[problem] "
+labels: ["problem"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before anything else: **never paste your password**, and don't attach
+        `state/storage.json` — that file is a live sign-in to your account.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What's going wrong?
+      placeholder: "It stopped alerting me", "It alerts constantly but there are no openings"
+    validations:
+      required: true
+
+  - type: textarea
+    id: status
+    attributes:
+      label: Output of STATUS.cmd
+      description: Double-click STATUS.cmd and paste everything it prints. This answers most questions on its own.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: snapshot
+    attributes:
+      label: Newest snapshot text
+      description: >
+        Open the `snapshots` folder, sort by date, and open the newest `.txt` file.
+        Paste its contents. This shows exactly what the watcher saw. Remove your
+        child's name if you'd rather not share it.
+      render: text
+
+  - type: input
+    id: school
+    attributes:
+      label: Which scheduling system?
+      description: The part of your school's login address before /Student/Login, e.g. www.tds.ms
+      placeholder: www.tds.ms
+
+  - type: dropdown
+    id: windows
+    attributes:
+      label: Windows version
+      options: ["Windows 11", "Windows 10", "Not sure"]

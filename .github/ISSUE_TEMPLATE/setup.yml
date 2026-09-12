@@ -1,0 +1,25 @@
+name: I can't get it installed
+description: Setup fails or won't finish
+title: "[setup] "
+labels: ["setup"]
+body:
+  - type: textarea
+    id: step
+    attributes:
+      label: Which step did it stop on?
+      description: Setup prints "Step 1 of 6" and so on. Which one, and what did it say?
+    validations:
+      required: true
+
+  - type: textarea
+    id: message
+    attributes:
+      label: The exact message
+      description: Copy the red or yellow text from the setup window.
+      render: text
+
+  - type: dropdown
+    id: windows
+    attributes:
+      label: Windows version
+      options: ["Windows 11", "Windows 10", "Not sure"]

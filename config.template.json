@@ -1,0 +1,88 @@
+{
+  "_comment": "Blank template. INSTALL.cmd fills in your school's URLs and your alert settings. Nothing personal lives here until you run setup.",
+
+  "schedulingUrl": "",
+  "loginUrl": "",
+  "loginHostPattern": "/Student/Login",
+
+  "detection": {
+    "mode": "auto",
+    "noSlotsPhrases": [
+      "No Available Open Slots",
+      "No Open Slots Available",
+      "All Lessons Scheduled",
+      "no available open slots",
+      "no available slots",
+      "no open slots",
+      "no openings available",
+      "no appointments found"
+    ],
+    "sessionLostUrlPatterns": [
+      "ErrorPage\\.html",
+      "/Account/Login",
+      "/Student/Login"
+    ],
+    "sessionLostPhrases": [
+      "Oops! Something went wrong"
+    ],
+    "slotSelector": "",
+    "readySelector": "#OpenSlotdata",
+    "settleMs": 3500,
+    "timeoutMs": 45000,
+    "scanDatesAndTimes": true,
+    "ignorePatterns": [
+      "\\d{1,2}:\\d{2}:\\d{2}\\s*(AM|PM)?",
+      "Last (updated|refreshed)[^\\n]*"
+    ]
+  },
+
+  "preActions": [],
+
+  "pagination": {
+    "nextSelector": "",
+    "maxClicks": 0,
+    "waitAfterClickMs": 1500
+  },
+
+  "alerts": {
+    "cooldownMinutes": 45,
+    "dailySummary": {
+      "enabled": true,
+      "atHour": 8,
+      "priority": "low",
+      "expectedChecksPerDay": 96,
+      "includeEmail": false
+    },
+    "openBrowserOnAlert": true,
+    "clickUrl": "",
+    "openIn": "default",
+    "toast": true,
+    "sound": true,
+    "soundRepeat": 6,
+    "popup": false,
+    "ntfy": {
+      "enabled": false,
+      "server": "https://ntfy.sh",
+      "topic": ""
+    },
+    "email": {
+      "enabled": false,
+      "smtpServer": "smtp.gmail.com",
+      "port": 587,
+      "useSsl": true,
+      "from": "",
+      "to": ""
+    }
+  },
+
+  "runtime": {
+    "headless": true,
+    "channel": "msedge",
+    "jitterSeconds": 60,
+    "errorAlertAfter": 3,
+    "keepSnapshots": 60,
+    "logDir": "",
+    "stateDir": "",
+    "snapshotDir": ""
+  }
+}
