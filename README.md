@@ -6,30 +6,30 @@
 
 ## ⬇️ Step 1 — Download it
 
-# **[👉 CLICK HERE TO DOWNLOAD 👈](https://github.com/ctaylor232323/driving-slot-watcher/archive/refs/heads/main.zip)**
+# **[👉 CLICK HERE TO DOWNLOAD 👈](https://github.com/ctaylor232323/driving-slot-watcher/releases/latest/download/DrivingSlotWatcher-Setup.exe)**
 
-That link downloads a zip file. You don't need a GitHub account, and you can
-ignore everything else on this page.
+That downloads one file: `DrivingSlotWatcher-Setup.exe`. You don't need a GitHub
+account, and you can ignore everything else on this page.
 
-## 📂 Step 2 — Unzip it
+## ▶️ Step 2 — Run it
 
-Find the downloaded file (usually in your **Downloads** folder), **right-click →
-Extract All**, and put it somewhere you'll remember, like `C:\DrivingSlotWatcher`.
-
-## ▶️ Step 3 — Run it
-
-Open the folder you just extracted and **double-click `INSTALL`**.
+Double-click the file you just downloaded.
 
 Windows will show a blue **"Windows protected your PC"** box. That's normal — it
 appears for anything not published by a big software company. Click
 **More info**, then **Run anyway**.
 
-Setup then walks you through the rest: signing in, and getting alerts to your
-phone. About five minutes.
+Then click through the installer the way you would any other program. It needs
+no administrator rights.
 
-**Stuck?** The full walkthrough with pictures of every step is in
-**[INSTRUCTIONS.md](INSTRUCTIONS.md)**, and you can
-[ask me here](../../issues/new/choose).
+## ⚙️ Step 3 — Let it set itself up
+
+When the installer finishes it opens a short setup that asks for your driving
+school's web address, opens a browser so you can sign in, and offers to send
+alerts to your phone. About five minutes.
+
+**Stuck?** The full walkthrough is in **[INSTRUCTIONS.md](INSTRUCTIONS.md)**, and
+you can [ask me here](../../issues/new/choose).
 
 <br>
 
