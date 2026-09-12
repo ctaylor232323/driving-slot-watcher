@@ -50,7 +50,9 @@ if ($task) {
     Write-Host ("Next run       : {0}" -f $info.NextRunTime)
 }
 else {
-    Write-Host "Not running. Double-click INSTALL.cmd to set it up." -ForegroundColor Yellow
+    Write-Host "Not running yet - setup has not been completed." -ForegroundColor Yellow
+    Write-Host "Finish it from:  Start Menu > Driving Lesson Slot Watcher > Set up the watcher" -ForegroundColor Yellow
+    Write-Host "(or double-click INSTALL.cmd in this folder)" -ForegroundColor Yellow
 }
 
 Write-Host ''

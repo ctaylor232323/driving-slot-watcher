@@ -247,6 +247,32 @@ try {
     Assert-Equal 'a thin day is called out' $true ($sleepyMsg -like '*asleep*')
 
     Write-Host ''
+    Write-Host 'Test 8c: no Start Menu shortcut name contains a character Windows forbids' -ForegroundColor Cyan
+
+    # A shortcut called "Is it working?" shipped in 1.0.1 and killed the install
+    # outright: Windows cannot create a file with ? in the name, so Inno failed
+    # with IPersistFile::Save 0x8007007B partway through. The earlier install
+    # test passed /NOICONS, which skips shortcut creation, so it never saw it.
+    $issPath = Join-Path (Split-Path $Root) 'installer\DrivingSlotWatcher.iss'
+    if (Test-Path $issPath) {
+        $iss = Get-Content $issPath -Raw
+        $names = [regex]::Matches($iss, '(?m)^Name:\s*"\{(?:group|autodesktop|commonprograms|userprograms)\}\\([^"]+)"') |
+            ForEach-Object { $_.Groups[1].Value }
+
+        Assert-Equal 'found shortcut names to check' $true ($names.Count -gt 0)
+
+        # Windows forbids  \ / : * ? " < > |  in a file name.
+        $illegal = @($names | Where-Object { $_ -match '[?*:<>|"]' })
+        if ($illegal.Count -gt 0) {
+            foreach ($n in $illegal) { Write-Host ("        offending name: {0}" -f $n) -ForegroundColor Red }
+        }
+        Assert-Equal 'every shortcut name is a legal filename' 0 $illegal.Count
+    }
+    else {
+        Write-Host '  (installer script not found, skipping)' -ForegroundColor DarkGray
+    }
+
+    Write-Host ''
     Write-Host 'Test 9: alerts leaving the machine link to the login page, not a deep link' -ForegroundColor Cyan
 
     $sched = 'https://www.tds.ms/CentralizeSP/BtwScheduling/Lessons?SchedulingTypeId=1'

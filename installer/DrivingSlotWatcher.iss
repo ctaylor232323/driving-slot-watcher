@@ -12,7 +12,7 @@
 
 #define AppName       "Driving Lesson Slot Watcher"
 #define AppShortName  "DrivingSlotWatcher"
-#define AppVersion    "1.0.1"
+#define AppVersion    "1.0.2"
 #define AppPublisher  "Chris Taylor"
 #define AppURL        "https://github.com/ctaylor232323/driving-slot-watcher"
 
@@ -56,6 +56,7 @@ Name: "desktopicon"; Description: "Put a shortcut on my Desktop"; GroupDescripti
 
 [Files]
 ; The launchers people actually double-click.
+Source: "..\app\INSTALL.cmd";             DestDir: "{app}"; Flags: ignoreversion
 Source: "..\app\CHECK-NOW.cmd";           DestDir: "{app}"; Flags: ignoreversion
 Source: "..\app\STATUS.cmd";              DestDir: "{app}"; Flags: ignoreversion
 Source: "..\app\RE-SIGN-IN.cmd";          DestDir: "{app}"; Flags: ignoreversion
@@ -95,7 +96,7 @@ Filename: "{app}\Buy the author a coffee.url"; Section: "InternetShortcut"; \
 [Icons]
 Name: "{group}\Set up the watcher";      Filename: "{sys}\WindowsPowerShell\v1.0\powershell.exe"; Parameters: "-NoProfile -ExecutionPolicy Bypass -File ""{app}\Install.ps1"""; WorkingDir: "{app}"
 Name: "{group}\Check for openings now";  Filename: "{app}\CHECK-NOW.cmd";  WorkingDir: "{app}"
-Name: "{group}\Is it working?";          Filename: "{app}\STATUS.cmd";     WorkingDir: "{app}"
+Name: "{group}\Is it working";            Filename: "{app}\STATUS.cmd";     WorkingDir: "{app}"
 Name: "{group}\Sign in again";           Filename: "{app}\RE-SIGN-IN.cmd"; WorkingDir: "{app}"
 Name: "{group}\Test my alerts";          Filename: "{app}\TEST-ALERT.cmd"; WorkingDir: "{app}"
 Name: "{group}\Instructions";            Filename: "{app}\INSTRUCTIONS.md"; WorkingDir: "{app}"
@@ -114,12 +115,6 @@ Filename: "{sys}\WindowsPowerShell\v1.0\powershell.exe"; \
   WorkingDir: "{app}"; \
   Description: "Set it up now (recommended)"; \
   Flags: postinstall nowait skipifsilent
-
-; Offered, not pushed: unchecked by default, so nobody donates by accident
-; through habitually clicking Next.
-Filename: "https://buymeacoffee.com/ctaylor23"; \
-  Description: "This was free - buy the author a coffee (optional)"; \
-  Flags: postinstall shellexec nowait skipifsilent unchecked
 
 [UninstallRun]
 ; Stop the scheduled task and delete the saved sign-in before the files go.

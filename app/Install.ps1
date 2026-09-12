@@ -24,6 +24,26 @@ param(
 $ErrorActionPreference = 'Stop'
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 
+# Without this, any unexpected error closes the window instantly and the user
+# is left staring at a vanished console with no idea what went wrong. Reported
+# as "after the first two steps the window just disappears".
+trap {
+    Write-Host ''
+    Write-Host '  ----------------------------------------------------------------' -ForegroundColor Red
+    Write-Host '  Setup ran into a problem and stopped.' -ForegroundColor Red
+    Write-Host ''
+    Write-Host ('  {0}' -f $_.Exception.Message) -ForegroundColor Red
+    Write-Host '  ----------------------------------------------------------------' -ForegroundColor Red
+    Write-Host ''
+    Write-Host '  Nothing is broken. You can run setup again any time from:'
+    Write-Host '    Start Menu > Driving Lesson Slot Watcher > Set up the watcher'
+    Write-Host ''
+    Write-Host '  If it keeps failing, send this message to Chris and he can fix it.'
+    Write-Host ''
+    Read-Host '  Press Enter to close'
+    exit 1
+}
+
 . (Join-Path $Root 'lib\Common.ps1')
 
 function Write-Step {
@@ -126,6 +146,20 @@ else {
 # ------------------------------------------------- 2. Playwright + browser ---
 
 Write-Step 2 $TOTAL 'Installing the browser automation library'
+
+$npm = Get-Command npm -ErrorAction SilentlyContinue
+if (-not $npm) {
+    Refresh-Path
+    $npm = Get-Command npm -ErrorAction SilentlyContinue
+}
+if (-not $npm) {
+    Write-Problem 'Node.js is installed but npm cannot be found yet.'
+    Write-Host '  Close this window, then run setup again from:' -ForegroundColor Yellow
+    Write-Host '    Start Menu > Driving Lesson Slot Watcher > Set up the watcher' -ForegroundColor Yellow
+    Write-Host '  (Windows sometimes needs a fresh window to notice a new install.)' -ForegroundColor Yellow
+    Read-Host '  Press Enter to close'
+    exit 1
+}
 
 Push-Location $Root
 try {
