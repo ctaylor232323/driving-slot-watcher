@@ -12,7 +12,7 @@
 
 #define AppName       "Driving Lesson Slot Watcher"
 #define AppShortName  "DrivingSlotWatcher"
-#define AppVersion    "1.0.2"
+#define AppVersion    "1.1.0"
 #define AppPublisher  "Chris Taylor"
 #define AppURL        "https://github.com/ctaylor232323/driving-slot-watcher"
 
@@ -65,6 +65,9 @@ Source: "..\app\SET-UP-PHONE-ALERTS.cmd"; DestDir: "{app}"; Flags: ignoreversion
 
 ; The program itself.
 Source: "..\app\Install.ps1";             DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\Setup-Headless.ps1";      DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\login-wizard.js";         DestDir: "{app}"; Flags: ignoreversion
+Source: "..\app\node-run.cmd";            DestDir: "{app}"; Flags: ignoreversion
 Source: "..\app\Uninstall.ps1";           DestDir: "{app}"; Flags: ignoreversion
 Source: "..\app\Check-Slots.ps1";         DestDir: "{app}"; Flags: ignoreversion
 Source: "..\app\Setup-Login.ps1";         DestDir: "{app}"; Flags: ignoreversion
@@ -101,20 +104,10 @@ Name: "{group}\Sign in again";           Filename: "{app}\RE-SIGN-IN.cmd"; Worki
 Name: "{group}\Test my alerts";          Filename: "{app}\TEST-ALERT.cmd"; WorkingDir: "{app}"
 Name: "{group}\Instructions";            Filename: "{app}\INSTRUCTIONS.md"; WorkingDir: "{app}"
 Name: "{group}\Buy the author a coffee"; Filename: "{app}\Buy the author a coffee.url"
+Name: "{group}\Your phone alert name"; Filename: "{app}\Your phone alert name.txt"; Flags: createonlyiffileexists
 Name: "{group}\Uninstall";               Filename: "{uninstallexe}"
 
 Name: "{autodesktop}\Driving Slot Watcher - Status"; Filename: "{app}\STATUS.cmd"; WorkingDir: "{app}"; Tasks: desktopicon
-
-[Run]
-; Launch setup straight after install, so there is no "now find the folder" gap.
-;
-; skipifsilent matters: without it a /VERYSILENT install still fires this, and
-; because setup asks questions it blocks forever with no window to answer in.
-Filename: "{sys}\WindowsPowerShell\v1.0\powershell.exe"; \
-  Parameters: "-NoProfile -ExecutionPolicy Bypass -File ""{app}\Install.ps1"""; \
-  WorkingDir: "{app}"; \
-  Description: "Set it up now (recommended)"; \
-  Flags: postinstall nowait skipifsilent
 
 [UninstallRun]
 ; Stop the scheduled task and delete the saved sign-in before the files go.
@@ -132,6 +125,9 @@ Type: filesandordirs; Name: "{app}\snapshots"
 Type: filesandordirs; Name: "{app}\profile"
 Type: filesandordirs; Name: "{app}\node_modules"
 Type: files;          Name: "{app}\Buy the author a coffee.url"
+Type: files;          Name: "{app}\Your phone alert name.txt"
 Type: files;          Name: "{app}\config.json"
 Type: files;          Name: "{app}\package-lock.json"
 Type: dirifempty;     Name: "{app}"
+
+#include "wizard.iss"
